@@ -26,7 +26,7 @@ jobs:
       - name:  Copy index.html to s3
         run: |
           aws s3 cp ./test.py s3://${{ env.BUCKET_NAME }}/
-          aws s3 ls
+          aws iam list-role-policies --role-name "arn:aws:iam::826763667205:role/SSE2383-iam-pratik-s3-role-for-ec2"
       - name:  Print python output
         run: |
           python test.py
